@@ -1,7 +1,7 @@
 testrepo
 ========
 
-just a **test**
+just a *test*
 
 another one
 
