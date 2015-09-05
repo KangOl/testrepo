@@ -1,4 +1,4 @@
 testrepo
 ========
 
-just a test foo
+just a test *foo*
