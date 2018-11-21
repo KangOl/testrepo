@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'fake module',
-    'version': '0.1',
+    'version': '0.2',
     'category': 'Tests',
     'description': """A empty module used for tests.""",
     'author': 'OpenERP SA',
