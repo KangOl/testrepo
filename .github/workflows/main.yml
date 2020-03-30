@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      run: git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules origin master ${{ github.event.pull_request.head.sha }}
       with:
        ref: ${{ github.event.pull_request.head.sha }}
+    - run: git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules origin master
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
