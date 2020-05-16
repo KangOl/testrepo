@@ -8,10 +8,11 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
+    - run: echo 'print "::set-env name=COMMITS::", ${{github.event.pull_request.commits}}+1,"\n"' | bc
     - uses: actions/checkout@v2
       with:
        ref: ${{ github.event.pull_request.head.sha }}
-       fetch-depth: ${{ github.event.pull_request.commits }}
+       fetch-depth: ${{ env.COMMITS }}
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
