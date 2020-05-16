@@ -22,7 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install -r requirements-dev.txt
     - name: set PY
-      run: echo "::set-env name=PY::$(python -c 'import hashlib, sys;print(hashlib.sha256(sys.version.encode()+sys.executable.encode()).hexdigest())')"
+      run: python -c 'import hashlib,sys;print("::set-env name=PY::",hashlib.sha256(sys.version.encode()+sys.executable.encode()).hexdigest(),sep="")'
     - uses: actions/cache@v1
       with:
         path: ~/.cache/pre-commit
