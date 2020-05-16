@@ -9,5 +9,4 @@ def foo(bar):
 foo("oops")
 
 
-
 failed()
