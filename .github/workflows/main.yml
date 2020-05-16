@@ -12,7 +12,7 @@ jobs:
       with:
        ref: ${{ github.event.pull_request.head.sha }}
     - name: Fetch base ref
-      run: git fetch --depth=1 origin +${{ github.base_ref }}
+      run: git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin ${{ github.base_ref }}
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
